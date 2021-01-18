@@ -86,10 +86,10 @@ class EmojiTableViewController: UITableViewController {
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let emoji = emojis[indexPath.row]
-        print("\(emoji.symbol) \(indexPath)")
-    }
+//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let emoji = emojis[indexPath.row]
+//        print("\(emoji.symbol) \(indexPath)")
+//    }
     
     // MARK: - Action
     @IBAction func editButtonTapped(_ sender: UIBarButtonItem) {
@@ -140,14 +140,22 @@ class EmojiTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "EditEmoji" {
+            let indexPath = tableView.indexPathForSelectedRow!
+            let emoji = emojis[indexPath.row]
+            let navController = segue.destination as! UINavigationController
+            let addEditEmojiViewController = navController.topViewController as! AddEditEmojiTableViewController
+            
+            addEditEmojiViewController.emoji = emoji
+        }
     }
-    */
+    
 
 }
