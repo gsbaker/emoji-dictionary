@@ -112,6 +112,9 @@
                                                     <rect key="frame" x="25" y="13" width="364" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="textEditingChanged:" destination="tLs-lU-nBN" eventType="editingChanged" id="0wP-Cz-1xU"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -137,6 +140,9 @@
                                                     <rect key="frame" x="25" y="13" width="364" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="textEditingChanged:" destination="tLs-lU-nBN" eventType="editingChanged" id="UnM-sq-MM3"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -162,6 +168,9 @@
                                                     <rect key="frame" x="25" y="13" width="364" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="textEditingChanged:" destination="tLs-lU-nBN" eventType="editingChanged" id="vl8-fQ-MFF"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -187,6 +196,9 @@
                                                     <rect key="frame" x="25" y="13" width="364" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="textEditingChanged:" destination="tLs-lU-nBN" eventType="editingChanged" id="FpK-fx-KGP"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -205,15 +217,28 @@
                             <outlet property="delegate" destination="tLs-lU-nBN" id="ALl-1x-Gek"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="ZEL-gn-da2"/>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="ZEL-gn-da2">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="m6O-Tf-ACR">
+                            <connections>
+                                <segue destination="8Kl-kx-nTN" kind="unwind" identifier="" unwindAction="unwindToEmojiTableViewWithSegue:" id="tVo-pr-8hK"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="7Fm-Vg-xcK">
+                            <connections>
+                                <segue destination="8Kl-kx-nTN" kind="unwind" identifier="saveUnwind" unwindAction="unwindToEmojiTableViewWithSegue:" id="ZDU-j6-h8L"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="descriptionTextField" destination="wX3-HN-PQy" id="pHe-sP-toS"/>
                         <outlet property="nameTextField" destination="kRu-6T-sOs" id="g9Y-Px-lnJ"/>
+                        <outlet property="saveButton" destination="7Fm-Vg-xcK" id="lA8-jP-082"/>
                         <outlet property="symbolTextField" destination="pmL-AP-MtO" id="Jya-mD-w3M"/>
                         <outlet property="usageTextField" destination="CE2-Fx-cXw" id="SX2-48-SQx"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ftw-wv-Jjr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="8Kl-kx-nTN" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2139" y="50"/>
         </scene>
