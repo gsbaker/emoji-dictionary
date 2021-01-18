@@ -2,15 +2,14 @@
 //  EmojiTableViewCell.swift
 //  EmojiDictionary
 //
-//  Created by George Baker on 26/12/2020.
-//  Copyright © 2020 George Baker. All rights reserved.
+//  Created by George Baker on 17/01/2021.
+//  Copyright © 2021 George Baker. All rights reserved.
 //
 
 import UIKit
 
 class EmojiTableViewCell: UITableViewCell {
-    
-    // MARK: - Outlets
+
     @IBOutlet weak var symbolLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!

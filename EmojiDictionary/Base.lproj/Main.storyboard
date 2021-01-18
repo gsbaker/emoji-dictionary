@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--Emoji Dictionary-->
         <scene sceneID="qao-3O-pXJ">
             <objects>
                 <tableViewController id="LEE-S3-jeW" customClass="EmojiTableViewController" customModule="EmojiDictionary" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,29 +17,54 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EmojiCell" textLabel="qV6-6K-qu2" detailTextLabel="iKT-2Y-DvE" style="IBUITableViewCellStyleSubtitle" id="nIM-9m-yNQ">
-                                <rect key="frame" x="0.0" y="28" width="414" height="55.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EmojiCell" id="nIM-9m-yNQ" customClass="EmojiTableViewCell" customModule="EmojiDictionary" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="63.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nIM-9m-yNQ" id="jRQ-DN-B1e">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="55.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="63.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qV6-6K-qu2">
-                                            <rect key="frame" x="20" y="10" width="33" height="20.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iKT-2Y-DvE">
-                                            <rect key="frame" x="20" y="31.5" width="44" height="14.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wnM-UG-8qu">
+                                            <rect key="frame" x="20" y="11" width="374" height="41.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="😀" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kcV-Qq-Rug">
+                                                    <rect key="frame" x="0.0" y="0.0" width="27" height="41.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="lpw-lI-a6P">
+                                                    <rect key="frame" x="27" y="0.0" width="347" height="41.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ppx-Vb-erp">
+                                                            <rect key="frame" x="0.0" y="0.0" width="347" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ARB-6I-X4Y">
+                                                            <rect key="frame" x="0.0" y="21" width="347" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                        </stackView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="wnM-UG-8qu" secondAttribute="bottom" id="IsN-kN-EC4"/>
+                                        <constraint firstItem="wnM-UG-8qu" firstAttribute="leading" secondItem="jRQ-DN-B1e" secondAttribute="leadingMargin" id="N43-sn-SZl"/>
+                                        <constraint firstItem="wnM-UG-8qu" firstAttribute="top" secondItem="jRQ-DN-B1e" secondAttribute="topMargin" id="fSV-Eq-zba"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="wnM-UG-8qu" secondAttribute="trailing" id="nO1-3N-CKM"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="descriptionLabel" destination="ARB-6I-X4Y" id="XD0-mG-ba1"/>
+                                    <outlet property="nameLabel" destination="ppx-Vb-erp" id="QKc-Lj-r2P"/>
+                                    <outlet property="symbolLabel" destination="kcV-Qq-Rug" id="VTP-24-Qnh"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -47,7 +72,7 @@
                             <outlet property="delegate" destination="LEE-S3-jeW" id="gyj-i3-OZa"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="gXD-1W-Mnd">
+                    <navigationItem key="navigationItem" title="Emoji Dictionary" id="gXD-1W-Mnd">
                         <barButtonItem key="leftBarButtonItem" systemItem="edit" id="fLa-DG-O8J">
                             <connections>
                                 <action selector="editButtonTapped:" destination="LEE-S3-jeW" id="knU-Qz-tzm"/>
